@@ -28,3 +28,36 @@ Tên_function = (a,b) => {nội dung function};
 Tương đương với:  
 Tên_function(a,b){nội dung function};
 ### 1.3.2 Compare arrow function syntax to ES5 function syntax ?  
+Khác về cách khai báo hàm(ở ES5 thì có chữ function trước tên hàm, còn ở ES6 thì mất chữ function nhưng thêm dấu suy ra sau tên hàm.)  
+### 1.3.3 Các biến thể của hàm Arrow, hãy thử chúng trong Babel Repl, sửa lỗi nếu có  
+
+### 1.3.4 True or false: arrow functions are anonymous ?  
+const myFunc = x => 4;  
+console.log(myFunc.name);  
+True, vì hàm chỉ có 1 biến x nên không cần ngoặc đơn  
+### 1.3.5 Disadvantages: lost reference outside callback, hard to debug in stack strace  
+
+### 1.3.6 this  
+Evaluate the code below, can you explain what happens ?  
+```
+var obj = {
+  a: 10,
+  method: function method() {
+    setTimeout(function () {
+        console.log(this.a);
+    }, 200);
+  }
+}
+
+var obj2 = {
+  a: 10,
+  method: function method() {
+    setTimeout(() => {
+        console.log(this.a);
+    }, 200);
+  }
+}
+
+obj.method(); // ??
+obj2.mthod();
+```
