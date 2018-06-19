@@ -58,6 +58,113 @@ var obj2 = {
   }
 }
 
-obj.method(); // ??
-obj2.mthod();
+obj.method(); // undefined
+obj2.mthod(); // 10
 ```
+Vì ở obj thì this trỏ tới window. còn ở obj2 thì do không có function ở trong setTimeout nên this sẽ trỏ đến obj2 .  
+
+### 1.3.7 Promise  
+Compare 2 Promise call below, what do you think ? If v is null or undefined what will happend ? How you handle that ?  
+```
+p.then(function (v) { return v.id });
+
+p.then(v => v.id);
+```
+2 cấu trúc trên tương đương nhau.  
+nếu v là null thì viết lại là:  
+```
+p.then(function () { return v.id });
+
+p.then(() => v.id);
+```
+### 1.3.8 Exercise 01: rewrite all function below with arrow functions and try to avoid curly braces {} as much as possible  
+```(function iife(){
+
+  function foo(x) {
+    var y = x * 2;
+
+    return function bar(z) {
+      if (z.length > 3) {
+        return z.map( function baz(v){
+          if (v > 3) return v + y;
+          else return baz( v * 4 );
+        } );
+      }
+      else {
+        var obj = [];
+
+        setTimeout( function bam(){
+          obj.length = 1;
+          obj[0] = this.w;
+        }.bind( this ), 100 );
+
+        return obj;
+      }
+    };
+  }
+
+  var p = foo( 2 );
+  var list1 = [1,3,4];
+  var list2 = list1.concat( 6 );
+
+  list1 = p.call( { w: 42 }, list1 );
+  list2 = p( list2 );
+
+  setTimeout( function(){
+    console.log( list1[0] === list2.reduce( function(s,v){
+      return s + v;
+    }, 0 ) );
+  }, 200 );
+})();
+```
+viết lại là:  
+```
+( iife = () => {
+
+foo=(x)=> {
+  var y = x * 2;
+
+  return function bar(z) {
+    if (z.length > 3) {
+      return z.map( function baz(v){
+        if (v > 3) return v + y;
+        else return baz( v * 4 );
+      } );
+    }
+    else {
+      var obj = [];
+
+      setTimeout( function bam(){
+        obj.length = 1;
+        obj[0] = this.w;
+      }.bind( this), 100 );
+
+      return obj;
+    }
+  };
+}
+
+var p = foo( 2 );
+var list1 = [1,3,4];
+var list2 = list1.concat( 6 );
+
+list1 = p.call( { w: 42 }, list1 );
+list2 = p( list2 );
+
+setTimeout( () => {
+  console.log( list1[0] === list2.reduce( (s,v) => {
+    return s + v;
+  }, 0 ) );
+}, 200 );
+})();
+```
+# 1.4 Classes  
+### 1.4.1 Provide an example to create a new classed named Person which have 2 fields: id, name and 1 method: sayHello which print hello to the console 
+```
+class Person(){
+sayHello(id , name){
+this.id = id;
+this.name = name;}
+}
+```
+### 1.4.2 What is keyword extends and super, provide an example that used both keyword ?
