@@ -19,3 +19,12 @@ future javascript is ES6.
 ### 1.2.4 What is problem you have if you want to use Future JavaScript in Present Browsers?  
 
 ### 1.2.5 What is transpiler ?  
+
+### 1.2.6 What is Babel ? Try Babel online here: https://babeljs.io/repl/  
+Babel là công cụ dùng để chuyển đổi code javascript từ phiên bản mới về phiên bản cũ hơn để các trình duyệt không đọc được bản ES mới có thể đọc hiểu được.  
+# 1.3 Arrow Function  
+### 1.3.1 Arrow Function syntax ?  
+Tên_function = (a,b) => {nội dung function};  
+Tương đương với:  
+Tên_function(a,b){nội dung function};
+### 1.3.2 Compare arrow function syntax to ES5 function syntax ?  
