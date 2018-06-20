@@ -198,3 +198,5 @@ Con a
 vì hàm Con được nhận các giá trị của hàm method() nhờ super.method()  
 ### 1.4.4 What is static keyword ?   
 là gọi super trên một function có giá trị cố định.  
+# 1.5 Block Scope: let + const  
+### 1.5.1 Compare let and var  
