@@ -192,5 +192,9 @@ class Con extends Cha {
   }
 }
 ```
-
+Hiển thị ra:  
+Cha a  
+Con a  
+vì hàm Con được nhận các giá trị của hàm method() nhờ super.method()  
 ### 1.4.4 What is static keyword ?   
+là gọi super trên một function có giá trị cố định.  
