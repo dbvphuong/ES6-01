@@ -199,4 +199,52 @@ vì hàm Con được nhận các giá trị của hàm method() nhờ super.met
 ### 1.4.4 What is static keyword ?   
 là gọi super trên một function có giá trị cố định.  
 # 1.5 Block Scope: let + const  
-### 1.5.1 Compare let and var  
+### 1.5.1 Compare let and var   
+let là câu lệnh khai báo biến ở phạm vi block mà nó dc khai báo.  
+var là câu lệnh khai báo biến trong phạm vi function chứa nó.  
+### 1.5.2 Closures scope, how do let work in closures, try example below  
+```
+for (let i = 0; i < 3; i++) {
+  let btn = document.getElementById('btn' + i);
+  btn.addEventListener('click', () {
+    alert(i);
+  });
+}
+```
+### 1.5.3 What is const ? Example ?  
+const dùng để khai báo 1 hằng số(không thể thay đổi trong quá trình chạy).  
+ví dụ:  
+```
+const a=1;  
+var a=2;
+a;// báo lỗi vì a đã được khai báo, không thể thay đổi được  
+```
+### 1.5.4 Exercise: fix code below (anywhere) so the console.log will display true  
+```
+var x = 2, fns = [];
+
+(function(){
+  var x = 5;
+
+  for (var i=0; i<x; i++) {
+  }
+})();
+
+console.log((x * 2) === fns[x*2]()); // must be true
+```
+sửa lại là:  
+```
+var x = 2;
+var fns;
+
+(function(){
+  var x = 5;
+
+  for (var i=0; i<x; i++) {
+  fns = i}
+})();
+
+console.log((x * 2) === fns); // true
+```
+# 1.6 Default Values and the Gather/Spread Operator  
+### 1.6.1 Default Values: how to define a functon with default value in ES6 ? And in ES6 ?  
