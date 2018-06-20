@@ -161,10 +161,36 @@ setTimeout( () => {
 # 1.4 Classes  
 ### 1.4.1 Provide an example to create a new classed named Person which have 2 fields: id, name and 1 method: sayHello which print hello to the console 
 ```
-class Person(){
-sayHello(id , name){
-this.id = id;
+class Person {
+constructor(id,name){
+this.so = id;
 this.name = name;}
+sayHello(){
+console.log("hello" + this.name + this.so )
+}
+}
+var phuong= new Person(10,"Phuong");
+phuong.sayHello();
+```
+### 1.4.2 What is keyword extends and super, provide an example that used both keyword ?  
+extends dùng để truyền giá trị của cha cho con.  
+cú pháp: class con extends cha {};
+super dùng để gọi các hàm trên đối tượng cha.  
+### 1.4.3 Consider the following code, what will be printed out?  
+```
+class Cha {
+  constructor() { this.id = 'a' }
+  method() {
+    console.log('Cha', this.id)
+  }
+}
+
+class Con extends Cha {
+  method() {
+    super.method();
+    console.log('Con', this.id)
+  }
 }
 ```
-### 1.4.2 What is keyword extends and super, provide an example that used both keyword ?
+
+### 1.4.4 What is static keyword ?   
