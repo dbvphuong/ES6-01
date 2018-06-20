@@ -248,3 +248,4 @@ console.log((x * 2) === fns); // true
 ```
 # 1.6 Default Values and the Gather/Spread Operator  
 ### 1.6.1 Default Values: how to define a functon with default value in ES6 ? And in ES6 ?  
+
