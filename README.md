@@ -247,5 +247,82 @@ var fns;
 console.log((x * 2) === fns); // true
 ```
 # 1.6 Default Values and the Gather/Spread Operator  
+Spread Operator cho phép chuyển đổi 1 chuỗi thành nhiều argument(khi gọi hàm) hoặc thành nhiều phần tử cho array  
+Gather Operator cho phép thu thập tham số và được đặt trước dấu ...  
 ### 1.6.1 Default Values: how to define a functon with default value in ES6 ? And in ES6 ?  
+### 1.6.1 Default Values: how to define a functon with default value in ES6 ? And in ES6 ?  
+### 1.6.2 Lazy expression, evaluate the following code, how many times g have been called ?  
+```
+function g() {
+  console.log('g');
+}
 
+function f(x = g()) {
+}
+
+f(1);
+f();
+f();
+```
+### 1.6.3 Evaluate the following code  
+```
+var x = 1;
+
+function f(x = 2, fn = function() { return x }) {
+  console.log(fn());
+}
+
+f();
+```
+kết quả ra 2, vì x nhận giá trị là 2 trước.  
+### 1.6.4 What's a variadic arguments?  
+### 1.6.5 What is arguments in a JavaScript function ?  
+### 1.6.6 … operator can be used in 2 differents ways, see code below:  
+```
+function f(...args) { // gather arguments
+}
+
+var x = [1, 2, 3];
+var y = [4, 5];
+var z = [0, ...x, ...y ]; // spread out
+```
+
+z=[0,1,2,3,4,5];
+### 1.6.7 In which way the … operator is used in following code  
+```
+function g(...arr) { // ???
+}
+
+var a = [1, 2, 3];
+var b = [4, 5, 6];
+
+g(...a, ...b); // ???
+```
+funcion g() thu thập các giá trị a, b vào.  
+### 1.6.8 Exercise: fix the following code so console.log will print true  
+```
+function f() { }
+
+function g() {
+  var a1 = [2, 4];
+  var a2 = [6, 8, 10, 12];
+
+  return f();
+}
+
+console.log(g().join("") === "281012"); // must print true
+```
+sửa lại là:  
+```
+function f() { }
+
+function g() {
+  var a1 = [2, 4];
+  var a2 = [6, 8, 10, 12];
+delete a2[0];
+var a2 = [2,...a2];
+  return a2;
+}
+
+console.log(g().join("") === "281012");
+```
