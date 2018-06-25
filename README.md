@@ -212,7 +212,7 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 ### 1.5.3 What is const ? Example ?  
-const dùng để khai báo 1 hằng số(không thể thay đổi trong quá trình chạy).  
+const dùng để khai báo 1 hằng số(không thể thay đổi trong quá trình chạy). Nhưng có thể thay đổi giá trị bên trong của giá trị của nó.  
 ví dụ:  
 ```
 const a=1;  
