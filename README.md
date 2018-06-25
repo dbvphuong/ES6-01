@@ -326,3 +326,22 @@ var a2 = [2,...a2];
 
 console.log(g().join("") === "281012");
 ```
+# 1.7 Destructuring  
+### 1.7.1 What is destructuring ? Example ?  
+destructuring là phương pháp giải nén các phần tử của mảng thành biến.  
+ví dụ:  
+```
+var [a,b,c,d,e,f] = [1,2,3,4,5,6];  
+console.log(a); // 1
+console.log(d,c); //4 3
+```
+### 1.7.2 Can you use destructuring and default values together ? Provide example?  
+
+### 1.7.3 Use Array destructuring to swap 2 variables ?  
+
+### 1.7.4 Dumping values: provide example that extract the 3rd element in an array and don't care about the 1st, 2nd element ? Provide example that swap 2 numbers ?  
+
+### 1.7.5 Nested Array Destructuring: in case we have an array like this [[1, 2], [3, 4], [5, 6]] use destructuring to extract the number 1 to variabled called a  
+
+### 1.7.6 Chain multiple array destructuring  
+
