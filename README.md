@@ -328,7 +328,7 @@ console.log(g().join("") === "281012");
 ```
 # 1.7 Destructuring  
 ### 1.7.1 What is destructuring ? Example ?  
-destructuring là phương pháp giải nén các phần tử của mảng thành biến.  
+destructuring là phương pháp giải nén các phần tử của mảng hoặc object thành biến.  
 ví dụ:  
 ```
 var [a,b,c,d,e,f] = [1,2,3,4,5,6];  
@@ -336,12 +336,73 @@ console.log(a); // 1
 console.log(d,c); //4 3
 ```
 ### 1.7.2 Can you use destructuring and default values together ? Provide example?  
-
+Có thể sử dụng giá trị default đi cùng với destructuring, example:  
+```
+var[a=1,b=2,c=3] = [5,6];
+console.log(a);//5
+console.log(b);//6
+console.log(c);//3
+```
 ### 1.7.3 Use Array destructuring to swap 2 variables ?  
-
+Hai giá trị biến có thể đc hoán đổi vị trí cho nhau:  
+```
+var a=4;
+var b=7;
+var [a,b]=[b,a];
+console.log(a);//7
+console.log(b);//4
+```
 ### 1.7.4 Dumping values: provide example that extract the 3rd element in an array and don't care about the 1st, 2nd element ? Provide example that swap 2 numbers ?  
-
-### 1.7.5 Nested Array Destructuring: in case we have an array like this [[1, 2], [3, 4], [5, 6]] use destructuring to extract the number 1 to variabled called a  
-
+```
+var [,,c] = [1,2,3];
+console.log(c);//3
+```
+### 1.7.5 Nested Array Destructuring: in case we have an array like this [[1, 2], [3, 4], [5, 6]] use destructuring to extract the number 1 to variabled called a   
+trích số 1 từ mảng trên:  
+```
+var x = [[1,2],[3,4],[5,6]];
+var [[a,],,] = x;
+console.log(a);
+```
 ### 1.7.6 Chain multiple array destructuring  
 
+### 1.7.7 Object Destructuring: provide an example that use destructuring to extract property in an object ?  
+```
+var a={x:3 , y:5 , z:"hay noi"};
+var {x,y,z} = a;
+console.log(x);//3
+```
+### 1.7.8 Object destructuring with default values ?
+```
+var {x=2, y=3} = {y:5};
+console.log(x);// 2
+consolo.log(y);// 5
+```
+### 1.7.9 Nested Object Destructuring: in case we have an object like this { nested: { a: 10 } }, provide an example that use destructuring to extract value of a in inside nested object  
+Dúng destructuring để trích xuất đối tượng trong {nested: {a:10 } }.  
+```
+var x = {nested: {a:10 } };
+var {nested: y} = x;
+console.log(y);// {a:10}
+```
+### 1.7.10 Destructuring and Function Parameters: consider the array destructuring for parameters what will be printed out ?  
+```
+function fn([ x, y ]) {
+  console.log(x, y);
+}
+
+fn(1, 2); // ??
+fn([ 1, 2 ]); // ??
+fn([ 1 ]); // ??
+fn([ ]); // ??
+
+function g({ a, b, c }) {
+  console.log(a, b, c);
+}
+
+g({
+  a: 1,
+  b: 2,
+  c: 3
+}); // named argument
+```
