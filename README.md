@@ -445,3 +445,60 @@ function response(/* TODO: object destructuring */) {
 }
 ajax("http://fun.tld",response);
 ```
+# 1.8 Object Literal Extensions  
+### 1.8.1 Concise properties: consider the following code what do you think ?  
+```
+var x = 2, y = 3;
+var o1 = {
+  x: x,
+  y: y
+}
+var o2 = {
+  x,
+  y
+}
+console.log(o1); // {x:2, y:3}
+console.log(o2); // {x:2, y:3}
+```
+### 1.8.2 Concise Methods: consider the following code what do you think ?  
+```
+var o1 = {
+  x: function() {
+    console.log('o1.x');
+  },
+  y: function() { }
+}
+o1.x();// o1.x
+var o2 = {
+  x() {
+     console.log('o2.x');
+  },
+  y() {}
+}
+o2.x();// o2.x
+```
+vì var x = function (){} bằng với function x(){}  
+### 1.8.3 ES5 Getter/Setter: consider the following code  
+```
+var o = {
+  _id: 10,
+  get id() { return this._id++; },
+  set id(v) { this._id = v; }
+}
+o.id; // 10
+o.id = 100;
+o.id; // 100?
+```
+get, set là lấy giá trị hàm ra và thay đổi giá trị chúng.  
+
+# 1.9 Template Strings  
+### 1.9.1 Template Strings: what is template strings ?  
+
+### 1.9.2 Consider this code below, rewrite it using ES6 template string  
+```
+var name = 'That Duy';
+var chaoDuy = 'Hello ' + name + '!';
+
+console.log(chaoDuy);
+console.log(typeof chaoDuy);
+```
