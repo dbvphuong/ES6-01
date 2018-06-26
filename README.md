@@ -493,7 +493,7 @@ get, set là lấy giá trị hàm ra và thay đổi giá trị chúng.
 
 # 1.9 Template Strings  
 ### 1.9.1 Template Strings: what is template strings ?  
-
+template strings là dùng ` ` để thu gọn cách viết chuỗi.  
 ### 1.9.2 Consider this code below, rewrite it using ES6 template string  
 ```
 var name = 'That Duy';
