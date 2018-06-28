@@ -365,7 +365,7 @@ var [[a,],,] = x;
 console.log(a);
 ```
 ### 1.7.6 Chain multiple array destructuring  
-
+var o = {a:[1,2], b:[3,4], c:[5,6]};
 ### 1.7.7 Object Destructuring: provide an example that use destructuring to extract property in an object ?  
 ```
 var a={x:3 , y:5 , z:"hay noi"};
@@ -494,6 +494,8 @@ get, set là lấy giá trị hàm ra và thay đổi giá trị chúng.
 # 1.9 Template Strings  
 ### 1.9.1 Template Strings: what is template strings ?  
 template strings là dùng ` ` để thu gọn cách viết chuỗi.  
+Cú pháp:  
+dấu xuống dòng là xuống dòng, ${expression} là chèn biểu thức.
 ### 1.9.2 Consider this code below, rewrite it using ES6 template string  
 ```
 var name = 'That Duy';
@@ -501,4 +503,56 @@ var chaoDuy = 'Hello ' + name + '!';
 
 console.log(chaoDuy);
 console.log(typeof chaoDuy);
+```
+viết lại:  
+```
+var name = 'That Duy';
+var chaoDuy = `Hello ${name}!`;
+
+console.log(chaoDuy);
+console.log(typeof chaoDuy);
+```
+### 1.9.3 Interpolated Expression: can we use function inside ${…} if yes provide an example
+```
+var a = ` toi la ${1+2}`;  
+console.log(a);// toi la 3  
+```
+### 1.9.4 Tag Functions: consider the code below  
+```function f(strings, ...values) {
+  console.log(strings);
+  console.log(values);
+}
+
+var s = 'Fresher Academy';
+f`Hello ${s}`; // ["Hello ","", ["Hello ",""]]
+                  ["Fresher Academy"]
+```
+### 1.9.5 Exercise  
+```
+function upper(strings,...values) {
+  // TODO
+}
+var name = 'Nguyen Van A',
+  account = 'anv',
+  classname = 'Fresher Academy ES6';
+
+console.log(
+  `Hello ____ (@____), welcome to the ____!` ===
+  'Hello NGUYEN VAN A (@ANV), welcome to the FRESHER ACADEMY ES6!'
+);
+```
+bai lam:  
+```
+function upper(strings,...values) {
+console.log(string);
+console.log(...values);
+}
+var name = 'Nguyen Van A',
+  account = 'anv',
+  classname = 'Fresher Academy ES6';
+
+console.log(
+  upper`Hello ${name} (@${account}), welcome to the ${classname}!` ===
+  'Hello NGUYEN VAN A (@ANV), welcome to the FRESHER ACADEMY ES6!'
+);
 ```
