@@ -544,15 +544,41 @@ console.log(
 bai lam:  
 ```
 function upper(strings,...values) {
-console.log(string);
-console.log(...values);
+var text = "";
+  for(var i = 0; i< strings.length; i++){
+    if(i< values.length){text += strings[i] + values[i].toUpperCase();}
+    else{text += strings[i];}
+  }
+return text;
 }
 var name = 'Nguyen Van A',
   account = 'anv',
   classname = 'Fresher Academy ES6';
-
 console.log(
   upper`Hello ${name} (@${account}), welcome to the ${classname}!` ===
   'Hello NGUYEN VAN A (@ANV), welcome to the FRESHER ACADEMY ES6!'
 );
 ```
+# 1.10 Modules  
+### 1.10.1 What is module pattern ?  
+Mô hình module là chương trình được chia làm nhiều phần, mỗi phần là 1 module,trong module chứa code và có tính tự đóng gói cao.  
+### 1.10.2 What is ES6 import/export ?  
+Cách nhập(import):  
+import {tên module} "module.js"  
+tên module là tên module do mình đặt, module.js là nơi chứa file module gắn với biến tên module.  
+
+Cách xuất(export):  
+export{tên module cần xuất};
+### 1.10.3 What is export default ? How to import a exported default function ?  
+Xuất giá trị mặc định hàm:  
+export default function(){};  
+Xuất giá trị mặc định lớp:  
+export default class{};  
+Cách xuất 1 giá trị mặc định từ function:  
+import ten from 
+
+### 1.10.4 Circular Module Dependency: A imports B, B imports A, how does this work ?  
+###  1.11 Module Loaders  
+
+# 1.11 Module Loaders  
+
