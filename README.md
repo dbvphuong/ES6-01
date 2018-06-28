@@ -336,7 +336,7 @@ console.log(a); // 1
 console.log(d,c); //4 3
 ```
 ### 1.7.2 Can you use destructuring and default values together ? Provide example?  
-Có thể sử dụng giá trị default đi cùng với destructuring, example:  
+Có thể sử dụng giá trị default đi cùng với destructuring,giá trị destructoring luôn đè lên giá trị default example:  
 ```
 var[a=1,b=2,c=3] = [5,6];
 console.log(a);//5
@@ -575,8 +575,8 @@ export default function(){};
 Xuất giá trị mặc định lớp:  
 export default class{};  
 Cách xuất 1 giá trị mặc định từ function:  
-import ten from 
-
+import ten from "noi chua module";  
+export default ten;
 ### 1.10.4 Circular Module Dependency: A imports B, B imports A, how does this work ?  
 ###  1.11 Module Loaders  
 
