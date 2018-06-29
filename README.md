@@ -637,4 +637,17 @@ Kiểm tra phần tử tồn tại: a.has('Name')
 Đếm tổng số phần tử: a.size  
 Xóa toàn bộ phần tử: a.clear();  
 
-
+Bài lọc array:  
+```
+var arr = [1,2,3,4,6,2,4];
+var mymap = new Map();
+var arr1=[];
+for(var i=0; i<arr.length; i++){
+  mymap.set(arr[i],arr[i]);
+}
+console.log(mymap);
+for(var[key,value] of mymap){
+  arr1.push(key);
+}
+console.log(arr1)
+```
