@@ -624,7 +624,17 @@ Cách xuất 1 giá trị mặc định từ function:
 import ten from "noi chua module";  
 export default ten;
 ### 1.10.4 Circular Module Dependency: A imports B, B imports A, how does this work ?  
-###  1.11 Module Loaders  
 
 # 1.11 Module Loaders  
+
+# 1.12 Collections  
+### Map  
+map luôn có dạng key=>value. key ở đây có thể là string, number,const,NaN.  
+Khởi tạo: var a = new Map()  
+Thêm phần tử: a.set('Name', 'Nguyen Van Cuong');  
+Xóa phần tử: a.delete("Name");  
+Kiểm tra phần tử tồn tại: a.has('Name')  
+Đếm tổng số phần tử: a.size  
+Xóa toàn bộ phần tử: a.clear();  
+
 
