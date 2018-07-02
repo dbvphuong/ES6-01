@@ -631,7 +631,7 @@ export default ten;
 ### Map  
 map luôn có dạng key=>value. key ở đây có thể là string, number,const,NaN.  
 Khởi tạo: var a = new Map()  
-Thêm phần tử: a.set('Name', 'Nguyen Van Cuong');  
+Thêm phần tử: a.set('Name', 'Cao phương');  
 Xóa phần tử: a.delete("Name");  
 Kiểm tra phần tử tồn tại: a.has('Name')  
 Đếm tổng số phần tử: a.size  
@@ -651,3 +651,8 @@ for(var[key,value] of mymap){
 }
 console.log(arr1)
 ```
+# 1.13 Proxies  
+### 1.15.1 Array add of(..), from(..)* and fill(..). Provide example using them  
+Array.of() là 1 phương pháp tạo array mới.  
+fill(giá trị cần điền, giá trị đầu, giá trị cuối) dùng để điền giá trị mặc định vào 1 array.  
+ten_array.from() là sao chép 1 array mới có giá trị đúng bằng ten_array.  
