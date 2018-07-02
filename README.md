@@ -654,5 +654,43 @@ console.log(arr1)
 # 1.13 Proxies  
 ### 1.15.1 Array add of(..), from(..)* and fill(..). Provide example using them  
 Array.of() là 1 phương pháp tạo array mới.  
+```
+Array.of("hay noi","di em",2); //["hay noi", "di em",2]
+```
 fill(giá trị cần điền, giá trị đầu, giá trị cuối) dùng để điền giá trị mặc định vào 1 array.  
+```
+arr=[2,3,4,6,1,3];
+arr.fill(0,3,4);
+console.log(arr);//[2, 3, 4, 0, 1, 3]
+```
 ten_array.from() là sao chép 1 array mới có giá trị đúng bằng ten_array.  
+```
+var arr=["hay noi",2,3,4,5]; //["hay noi", 2, 3, 4, 5]
+Array.from(arr); //["hay noi", 2, 3, 4, 5]
+```
+### 1.15.2 Provide example using Object.is and Object.assign  
+Object.is là so sánh 2 giá trị(string, number,giá trị), trả về sẽ là true hoặc false.  
+```
+Object.is("fd","fd");// true
+```
+Object.assign là sao chép các giá trị từ bên ngoài vào trong 1 object đích.  
+Cú pháp: Object.asign({object đích},giá trị 1, giá trị 2)  
+```
+var o1 = {a:1};
+var o2 = {b:2};
+var o3 = {c:3};
+var x = Object.assign({},o1,o2,o3);
+console.log(x); //{a:1,b:2,c:3};
+```
+### 1.15.3 Provide example using String.repeat and String.includes  
+str.repeat() là hàm lặp lại  
+```
+a="hay noi";
+a.repeat(2);// "hay noihay noi"
+```
+str.includes(,) là hàm tìm kiếm giá trị có trong chuỗi không?  
+```
+a="hay noi";
+a.includes("oi");//true
+a.includes("it"); // false
+```
