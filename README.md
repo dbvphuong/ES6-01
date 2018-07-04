@@ -694,3 +694,19 @@ a="hay noi";
 a.includes("oi");//true
 a.includes("it"); // false
 ```
+# 1.19 Symbols, Iterators, and Generators  
+Iterators là người duyệt
+Cách duyệt 1 object:  
+```
+var obj =  { a: 10,
+             b: 2};
+function* gen(object) {
+    const keys = Object.keys(object);
+    for (let key of keys) {
+        yield [key, object[key]];
+    }
+}
+for (let [key,value] of gen(obj)) {
+	console.log(key, value);
+}
+```
