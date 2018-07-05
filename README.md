@@ -651,6 +651,13 @@ for(var[key,value] of mymap){
 }
 console.log(arr1)
 ```
+
+Cách 2:  
+```
+arr=[1,2,3,5,6,2,1];
+var set = new Set(arr);// {1, 2, 3, 5, 6}
+[...set]; //[1,2,3,5,6]
+```
 # 1.13 Proxies  
 ### 1.15.1 Array add of(..), from(..)* and fill(..). Provide example using them  
 Array.of() là 1 phương pháp tạo array mới.  
